@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <div id="post-form-area" style="width: 600px; margin: auto;">
+        <h1>Make a Post:</h1>
+        <form method="POST" action="{% url 'post:create_post' %}">
+            {% csrf_token %}
+            {{postform.media}}
+            {{postform.as_p}}
+            <input type="submit" name="" value="Post" style="font-size: 18px; color:white; background: rgb(67, 79, 214); border: none; padding: 5px; width: 120px;">
+        </form>
+    </div>
+    
+{% endblock %}
